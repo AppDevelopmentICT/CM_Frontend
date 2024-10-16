@@ -45,7 +45,7 @@ app.include_router(dashboard_router)
 app.include_router(maintenance_router)
 app.include_router(master_data_router)
 
-ALLOWED_ORIGINS = ["http://localhost:5173", "http://172.16.100.210:5130", "http://172.16.100.210:5173","http://172.16.100.210:5174"]
+ALLOWED_ORIGINS = ["*"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
