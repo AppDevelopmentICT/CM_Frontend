@@ -14,11 +14,11 @@ def create_connection():
     connection = psycopg.connect(
         host=DB_HOST,
         port=DB_PORT,
-        dbname="CopyCM",
+        dbname=DB_NAME,
         user=DB_USER,
         password=DB_PASSWORD,
     )
     with connection.cursor() as cur:
-        cur.execute("SET search_path TO public_testing;")
+        cur.execute("SET search_path TO public;")
     
     return connection

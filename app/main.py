@@ -18,25 +18,25 @@ tags_metadata = [
     }
 ]
 
-def custom_openapi():
-    if app.openapi_schema:
-        return app.openapi_schema
-    openapi_schema = get_openapi(
-        title="Contract Management Backend",
-        version=API_VERSION,
-        summary="API Endpoint for manage process on the application",
-        description="Here's a longer description of the custom **OpenAPI** schema",
-        routes=app.routes,
-    )
-    openapi_schema["info"]["x-logo"] = {
-        "url": "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
-    }
-    app.openapi_schema = openapi_schema
-    return app.openapi_schema
+# def custom_openapi():
+#     if app.openapi_schema:
+#         return app.openapi_schema
+#     openapi_schema = get_openapi(
+#         title="Contract Management Backend",
+#         version=API_VERSION,
+#         summary="API Endpoint for manage process on the application",
+#         description="Here's a longer description of the custom **OpenAPI** schema",
+#         routes=app.routes,
+#     )
+#     openapi_schema["info"]["x-logo"] = {
+#         "url": "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
+#     }
+#     app.openapi_schema = openapi_schema
+#     return app.openapi_schema
 
 
 app = FastAPI()
-app.openapi = custom_openapi
+# app.openapi = custom_openapi
 app.include_router(auth_router)
 app.include_router(audit_route)
 app.include_router(project_router)
