@@ -124,28 +124,45 @@ def get_project_list(user):
     cursor = conn.cursor()
     verify_sales = check_is_user_sales(user)
     data = []
+
     try:
         if verify_sales:
             cursor.execute(
                 """
-                SELECT project_id, project.cost_sheets, project.project_name, users.username, customer.customer_name, project.status, project.created_at  
+                SELECT 
+                    project_id, 
+                    COALESCE(project.cost_sheets, 'N/A') AS cost_sheets, 
+                    project.project_name, 
+                    users.username, 
+                    customer.customer_name, 
+                    project.status, 
+                    project.created_at  
                 FROM project
-                INNER JOIN users ON project.sales_person=users.id
-                INNER JOIN customer ON project.customer_id=customer.customer_id
-                WHERE sales_person=%s AND (project.status='Pending' OR project.status='Approved' OR project.status='Rejected')
+                INNER JOIN users ON project.sales_person = users.id
+                INNER JOIN customer ON project.customer_id = customer.customer_id
+                WHERE sales_person = %s 
+                  AND project.status IN ('Pending', 'Approved', 'Rejected')
                 ORDER BY project.created_at DESC
                 """, (user,)
             )
         else:
             cursor.execute(
                 """
-                SELECT project_id, project.cost_sheets, project.project_name, users.username, customer.customer_name, project.status, project.created_at  
+                SELECT 
+                    project_id, 
+                    COALESCE(project.cost_sheets, 'N/A') AS cost_sheets, 
+                    project.project_name, 
+                    users.username, 
+                    customer.customer_name, 
+                    project.status, 
+                    project.created_at  
                 FROM project
-                INNER JOIN users ON project.sales_person=users.id
-                INNER JOIN customer ON project.customer_id=customer.customer_id
+                INNER JOIN users ON project.sales_person = users.id
+                INNER JOIN customer ON project.customer_id = customer.customer_id
                 ORDER BY project.created_at DESC
                 """
             )
+
         project_raw_data = cursor.fetchall()
         for project in project_raw_data:
             try:
@@ -153,46 +170,39 @@ def get_project_list(user):
                     """
                     SELECT product_name
                     FROM product
-                    WHERE project_id=%s
-                    """,(project[0],)
+                    WHERE project_id = %s
+                    """, (project[0],)
                 )
                 product = cursor.fetchall()
-                if len(product) > 1:
-                    data.append({
-                        "project_id": project[0],
-                        "costsheet": project[1],
-                        "project_name": project[2],
-                        "sales_person": project[3],
-                        "customer_name": project[4],
-                        "project_status": project[5],
-                        "product": str(len(product)) + " Products"
-                    })
-                elif len(product) == 1:
-                    data.append({
-                        "project_id": project[0],
-                        "costsheet": project[1],
-                        "project_name": project[2],
-                        "sales_person": project[3],
-                        "customer_name": project[4],
-                        "project_status": project[5],
-                        "product": product[0][0]
-                    })
-                else:
-                    data.append({
-                        "project_id": project[0],
-                        "costsheet": project[1],
-                        "project_name": project[2],
-                        "sales_person": project[3],
-                        "customer_name": project[4],
-                        "project_status": project[5],
-                        "product": "No Products"
-                    })
+                product_info = (
+                    str(len(product)) + " Products" if len(product) > 1 
+                    else product[0][0] if len(product) == 1 
+                    else "No Products"
+                )
+
+                data.append({
+                    "project_id": project[0],
+                    "costsheet": project[1],
+                    "project_name": project[2],
+                    "sales_person": project[3],
+                    "customer_name": project[4],
+                    "project_status": project[5],
+                    "product": product_info
+                })
             except Exception as err:
-                return JSONResponse({"message": "Error fetch product data", "error": str(err)}, status_code=500)    
+                return JSONResponse(
+                    {"message": "Error fetching product data", "error": str(err)},
+                    status_code=500
+                )
+
         conn.close()
         return JSONResponse({"data": data}, status_code=200)
+
     except Exception as err:
-        return JSONResponse({"message": "Error while fetch project data", "error": str(err)}, status_code=500)
+        return JSONResponse(
+            {"message": "Error while fetching project data", "error": str(err)},
+            status_code=500
+        )
 
 def get_project_by_id(id):
     conn = create_connection()
