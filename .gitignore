@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-__pycache__
-venv
-.env
-=======
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -27,4 +21,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
->>>>>>> f92649972cb7af9171e5fba41d00cbb54f2d313d

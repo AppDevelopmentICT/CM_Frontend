@@ -322,9 +322,20 @@ const deleteFile = async (file, e) => {
 
 
 const validate = () => {
+    if(pm.value.pm_by == 'None'){
+        pm.value.start_date = new Date(0)
+        pm.value.end_date = new Date(0)
+    }
+    if(cm.value.cm_by == 'None'){
+        cm.value.start_date = new Date(0)
+        cm.value.end_date = new Date(0)
+    }
+    if(implementation.value.implementation_type == 'None'){
+        implementation.value.start_date = new Date(0)
+        implementation.value.end_date = new Date(0)
+    }
     var checkPmQuantity = pm.value.quantity.split(" ")
     var checkCmQuantity = cm.value.quantity.split(" ")
-    console.log(pm.value)
     if(project.value.customer!="" &&
         project.value.costSheet!="" &&
         project.value.projectName!="" &&
