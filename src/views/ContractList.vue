@@ -36,7 +36,7 @@
 
 
         <div class="card overflow-hidden" v-if="userStore.role != 'Helpdesk'">
-            <DataTable :value="testing" columnResizeMode="fit" tableStyle="min-width: 100%" removableSort paginator :rows="20" :rowsPerPageOptions="[10,20,30]">
+            <DataTable :value="testing" columnResizeMode="fit" tableStyle="min-width: 100%" removableSort paginator :rows="20" :rowsPerPageOptions="[20, 30, 35]">
                 <template #empty> No contracts found... </template>
                 <Column header="">
                     <template #body="slotProps">
