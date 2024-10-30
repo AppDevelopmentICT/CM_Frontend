@@ -35,8 +35,8 @@
         
 
 
-        <div class="card overflow-hidden" v-if="userStore.role != 'Helpdesk'">
-            <DataTable :value="testing" columnResizeMode="fit" tableStyle="min-width: 100%" removableSort paginator :rows="20" :rowsPerPageOptions="[20, 30, 35]">
+        <div class="card" v-if="userStore.role != 'Helpdesk'">
+            <DataTable :value="testing" resizableColumns removableSort paginator :rows="5" :rowsPerPageOptions="[5, 10, 20]">
                 <template #empty> No contracts found... </template>
                 <Column header="">
                     <template #body="slotProps">
@@ -49,12 +49,12 @@
                             }"></span>
                     </template>
                 </Column>
-                <Column field="customer_name" header="Customer Name" class="text-ellipsis" sortable pt:sortIcon:class="text-white"></Column>
-                <Column field="costsheet" header="Cost Sheet" class="text-ellipsis" sortable></Column>
-                <Column field="sales_person" header="Sales Person" class="text-ellipsis" sortable></Column>
-                <Column field="project_name" header="Project Name" class="text-ellipsis" sortable></Column>
-                <Column field="product" header="Products" class="text-ellipsis" sortable></Column>
-                <Column field="project_status" header="Status" class="text-ellipsis" sortable></Column>
+                <Column field="customer_name" header="Customer Name" sortable pt:sortIcon:class="text-white"></Column>
+                <Column field="costsheet" header="Cost Sheet" sortable></Column>
+                <Column field="sales_person" header="Sales Person" sortable></Column>
+                <Column field="project_name" header="Project Name" sortable></Column>
+                <Column field="product" header="Products" sortable></Column>
+                <Column field="project_status" header="Status" sortable></Column>
                 <Column header="">
                     <template #body="slotProps">
                         <div class="flex">
