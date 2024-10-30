@@ -63,7 +63,7 @@ input[type="file"]{
 
 
 table td {
-    @apply text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap
+    @apply text-sm text-gray-900 font-light px-6 py-4
 }
 
 table tbody tr{
@@ -97,4 +97,9 @@ table th {
     stroke: #908c13;
     animation: p-progress-spinner-dash 1.5s ease-in-out infinite, p-progress-spinner-color none;
     stroke-linecap: round;
+}
+
+.p-datatable-resizable-table > .p-datatable-thead > tr > th, .p-datatable-resizable-table > .p-datatable-tfoot > tr > td, .p-datatable-resizable-table > .p-datatable-tbody > tr > td {
+    overflow: hidden;
+    white-space: wrap;
 }

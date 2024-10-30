@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="w-full">
         <h1 class="text-[#908c13] font-semibold text-3xl mb-12">Contract List</h1>
 
         <div class="flex items-center gap-4 justify-end">
@@ -35,8 +35,8 @@
         
 
 
-        <div class="card w-full" v-if="userStore.role != 'Helpdesk'">
-            <DataTable :value="testing" tableStyle="min-width: 100%" removableSort >
+        <div class="card" v-if="userStore.role != 'Helpdesk'">
+            <DataTable :value="testing" resizableColumns removableSort paginator :rows="5" :rowsPerPageOptions="[5, 10, 20]">
                 <template #empty> No contracts found... </template>
                 <Column header="">
                     <template #body="slotProps">
@@ -49,8 +49,7 @@
                             }"></span>
                     </template>
                 </Column>
-                <Column field="customer_name" header="Customer Name" sortable pt:sortIcon:class="text-white">
-                </Column>
+                <Column field="customer_name" header="Customer Name" sortable pt:sortIcon:class="text-white"></Column>
                 <Column field="costsheet" header="Cost Sheet" sortable></Column>
                 <Column field="sales_person" header="Sales Person" sortable></Column>
                 <Column field="project_name" header="Project Name" sortable></Column>
@@ -274,27 +273,5 @@ onMounted(async () => {
 <style lang="scss" scoped>
 
 
-table tbody tr{
-    @apply border-b transition duration-300 ease-in-out hover:bg-gray-200
-}
-
-.p-highlight{
-    @apply bg-[#908c13] text-white 
-}
-
-table thead th{
-    @apply text-white
-}
-.p-datatable{
-    @apply z-0
-}
-.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
-    color: #ffffff;
-}
-
-.p-datatable .p-sortable-column .p-sortable-column-icon {
-    color: #ffffff;
-    margin-left: 0.5rem;
-}
 
 </style>
