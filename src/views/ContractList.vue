@@ -36,7 +36,7 @@
 
 
         <div class="card" v-if="userStore.role != 'Helpdesk'">
-            <DataTable :value="testing" resizableColumns removableSort paginator :rows="5" :rowsPerPageOptions="[5, 10, 20]">
+            <DataTable :value="testing" resizableColumns removableSort paginator :rows="10" :rowsPerPageOptions="[10, 15, 20, 30]">
                 <template #empty> No contracts found... </template>
                 <Column header="">
                     <template #body="slotProps">
@@ -73,7 +73,7 @@
             </DataTable>
         </div>
         <div class="card w-full" v-else>
-            <DataTable :value="testing" tableStyle="min-width: 100%" removableSort >
+            <DataTable :value="testing" tableStyle="min-width: 100%" removableSort paginator :rows="10" :rowsPerPageOptions="[10, 15, 20, 30]">
                 <template #empty> No contracts found... </template>
                 <Column header="">
                     <template #body="slotProps">
