@@ -4,7 +4,6 @@
   </div>
   <section v-else class="bg-slate-50 w-full h-screen overflow-auto" :class="{'overflow-hidden': isHome}">
     
-    
     <div class="flex">
         <SideBar/>
         <div class="p-5 ml-[16rem] w-full h-full min-h-screen">
