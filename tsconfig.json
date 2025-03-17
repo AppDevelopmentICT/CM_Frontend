@@ -18,8 +18,13 @@
     /* Linting */
     "strict": false,
     "noUnusedLocals": false,
-    "noUnusedParameters": false,
+    "noUnusedParameters": false
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/router/index.js"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/router/index.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

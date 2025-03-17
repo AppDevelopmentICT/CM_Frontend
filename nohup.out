@@ -1,0 +1,49 @@
+
+> cmapp@1.1.0 dev
+> vite --host
+
+
+  VITE v5.2.11  ready in 882 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.16.100.210:5173/
+  ➜  Network: http://172.17.0.1:5173/
+  ➜  Network: http://172.20.0.1:5173/
+  ➜  Network: http://172.30.0.1:5173/
+  ➜  Network: http://100.126.85.100:5173/
+[1m[33m[@vue/compiler-sfc][0m[33m `defineProps` is a compiler macro and no longer needs to be imported.[0m
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+> cmapp@1.1.0 dev
+> vite --host
+
+
+  VITE v5.2.11  ready in 782 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.16.100.210:5173/
+  ➜  Network: http://172.17.0.1:5173/
+  ➜  Network: http://172.20.0.1:5173/
+  ➜  Network: http://172.30.0.1:5173/
+  ➜  Network: http://100.126.85.100:5173/
+
+> cmapp@1.1.0 dev
+> vite --host
+
+
+  VITE v5.2.11  ready in 966 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://172.16.100.210:5173/
+  ➜  Network: http://172.17.0.1:5173/
+  ➜  Network: http://172.20.0.1:5173/
+  ➜  Network: http://172.30.0.1:5173/
+  ➜  Network: http://100.126.85.100:5173/
+[1m[33m[@vue/compiler-sfc][0m[33m `defineProps` is a compiler macro and no longer needs to be imported.[0m
+
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme

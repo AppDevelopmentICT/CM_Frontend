@@ -1,43 +1,45 @@
 [
-    {
-        "contractId"    :"12345",
-        "customerName"  :"PT Bank Mega Tbk",
-        "salesPerson"   :"Daniel Dwidjaya",
-        "costSheet"     :"CS00002/2023",
-        "projectName"   :"Refreshment oracle T4-1 menjadi S7-2L",
-        "product":[{
-            "productId"     :"1",
-            "productType"   :"Hardware",
-            "productBrand"  :"Oracle",
-            "productName"   :"SPARC S7-2L Server",
-            "serialNumber"  :"2246NM6001",
-            "siNumber"      :"26142381",
-            "quantity"      :"1",
-            "startDate"     :"28 Mar 2023",
-            "endDate"       :"27 Mar 2025",
-            "CMBy"          :"ICT"
-        },
-        {
-            "productId"     :"2",
-            "productType"   :"Services",
-            "productBrand"  :"Oracle",
-            "productName"   :"Preventive Maintenance",
-            "serialNumber"  :"-",
-            "siNumber"      :"-",
-            "quantity"      :"8",
-            "startDate"     :"28 Mar 2023",
-            "endDate"       :"27 Mar 2025",
-            "CMBy"          :"ICT"
-        }],
-        "PMBy"              :"ICT",
-        "periodeMaintenance":"Quarterly",
-        "internalCost"      :"66,000,000.00",
-        "sellingCost"       :"600,000,000.00",
-        "contractType"      :"Contract",
-        "contractNumber"    :"BIP/GA/PO/093/0223",
-        "description"       :"-"
-    },
-    {
-        "name":"qwe"
-    }
+  {
+    "contractId": "12345",
+    "customerName": "PT Bank Mega Tbk",
+    "salesPerson": "Daniel Dwidjaya",
+    "costSheet": "CS00002/2023",
+    "projectName": "Refreshment oracle T4-1 menjadi S7-2L",
+    "product": [
+      {
+        "productId": "1",
+        "productType": "Hardware",
+        "productBrand": "Oracle",
+        "productName": "SPARC S7-2L Server",
+        "serialNumber": "2246NM6001",
+        "siNumber": "26142381",
+        "quantity": "1",
+        "startDate": "28 Mar 2023",
+        "endDate": "27 Mar 2025",
+        "CMBy": "ICT"
+      },
+      {
+        "productId": "2",
+        "productType": "Services",
+        "productBrand": "Oracle",
+        "productName": "Preventive Maintenance",
+        "serialNumber": "-",
+        "siNumber": "-",
+        "quantity": "8",
+        "startDate": "28 Mar 2023",
+        "endDate": "27 Mar 2025",
+        "CMBy": "ICT"
+      }
+    ],
+    "PMBy": "ICT",
+    "periodeMaintenance": "Quarterly",
+    "internalCost": "66,000,000.00",
+    "sellingCost": "600,000,000.00",
+    "contractType": "Contract",
+    "contractNumber": "BIP/GA/PO/093/0223",
+    "description": "-"
+  },
+  {
+    "name": "qwe"
+  }
 ]
